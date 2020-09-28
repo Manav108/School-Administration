@@ -1,0 +1,58 @@
+print("****SCHOOL ADMINISTRATION****")
+print("Here We are collecting Student Information")
+print("Enter all your Student Information")
+print("It should be in this format Name Age DateOfBirth PhoneNumber Class Divison Roll No ")
+
+
+
+class School_Administration():
+    def __init__(self , info):
+        self.info = info
+         
+    def student_info(self):
+        
+        
+        condition = True
+        str_num = 1
+    
+        while(condition):
+            
+            
+            self.info = str(input("Enter student {} Information : ".format(str_num)))
+            list_student = []
+            list_student = self.info.split(" ")
+           
+            print("--------------------------")
+            print("--------------------------")
+            print("The Student {} Information : \nName : {}\nAge : {}\nDateOfBirth : {}\nPhoneNumber : {}\nClass : {}\nDivision : {}\nRoll No: {}".format(str_num, list_student[0], list_student[1], list_student[2], list_student[3], list_student[4], list_student[5], list_student[6]))
+            print("--------------------------")
+            print("--------------------------")
+            
+            print("Do u Put correct info?")
+            info_choice = input("Enter (yes/no) :")
+            if(info_choice == "no"):
+                Correct_info = input("Enter correct student  Information : ")
+                list_student_correct = []
+                list_student_correct = Correct_info.split(" ")
+                print("\nThe Correct Information : \nName : {}\nAge : {}\nDateOfBirth : {}\nPhoneNumber : {}\nClass : {}\nDivision : {}\nRoll No : {}".format(list_student_correct[0], list_student_correct[1], list_student_correct[2], list_student_correct[3], list_student_correct[4], list_student_correct[5], list_student_correct[6]))
+                 
+                   
+                 
+            print("Do u want to add another student name?")
+            Your_choice = input("Enter (yes/no) : ")
+            if(Your_choice == "yes"):
+                str_num = str_num + 1
+                condition = True
+            else:
+                condition = False
+                
+          
+
+
+
+
+
+
+info = input("Enter your information : ")
+Detail = School_Administration(info)
+print(Detail.student_info())
